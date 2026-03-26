@@ -1,10 +1,16 @@
 import styles from "./Comanda.module.css";
 
 function Comanda({ pedidos }) {
-  // Cálculo do total usando reduce
-  const valorTotal = pedidos.reduce((acc, item) => {
+  // 1. Cálculo do valor dos itens consumidos
+  const valorTotalItens = pedidos.reduce((acc, item) => {
     return acc + (item.precoUnitario * item.quantidade);
   }, 0);
+
+  // 2. Cálculo da Taxa de Serviço (10%)
+  const taxaServico = valorTotalItens * 0.10;
+
+  // 3. Valor Final (Itens + Taxa)
+  const valorFinal = valorTotalItens + taxaServico;
 
   return (
     <div className={styles.recibo}>
@@ -30,9 +36,22 @@ function Comanda({ pedidos }) {
 
       <hr className={styles.linhaDivisoria} />
 
-      <div className={styles.totalDiv}>
-        <span>Total a Pagar:</span>
-        <span className={styles.valorTotal}>R$ {valorTotal.toFixed(2)}</span>
+      {/* Seção de Taxas e Totais */}
+      <div className={styles.detalhesValores}>
+        <div className={styles.linhaInfo}>
+          <span>Subtotal:</span>
+          <span>R$ {valorTotalItens.toFixed(2)}</span>
+        </div>
+        
+        <div className={styles.linhaInfo}>
+          <span>Taxa de Serviço (10%):</span>
+          <span>R$ {taxaServico.toFixed(2)}</span>
+        </div>
+
+        <div className={styles.totalDiv}>
+          <span>Total a Pagar:</span>
+          <span className={styles.valorTotal}>R$ {valorFinal.toFixed(2)}</span>
+        </div>
       </div>
     </div>
   );
