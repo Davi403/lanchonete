@@ -1,0 +1,52 @@
+.recibo {
+  background-color: #ffffff;
+  border: 2px dashed #999; /* Borda tracejada de cupom */
+  padding: 25px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.cabecalho {
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.lista {
+  list-style: none; /* Remove as bolinhas da lista */
+  margin-bottom: 20px;
+}
+
+.itemLista {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.nomeQuantidade {
+  display: flex;
+  gap: 10px;
+}
+
+.linhaDivisoria {
+  border: none;
+  border-top: 2px dashed #ddd;
+  margin: 15px 0;
+}
+
+.totalDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.valorTotal {
+  color: #27ae60; /* Verde para destacar o dinheiro */
+}

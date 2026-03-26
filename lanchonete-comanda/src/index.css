@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e8eaed; /* Fundo cinza escuro para destacar o recibo branco */
+  font-family: 'Courier New', Courier, monospace; /* Fonte com estilo de cupom fiscal! */
+}
